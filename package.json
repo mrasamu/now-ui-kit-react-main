@@ -1,8 +1,10 @@
 {
+  "homepage": "build/index.html",
   "name": "now-ui-kit-react",
   "version": "1.5.1",
   "private": true,
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.9",
     "moment": "2.29.4",
@@ -19,6 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build -r https://github.com/mrasamu/now-ui-kit-react-main.git -b gh-pages",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
